@@ -1,13 +1,6 @@
 {
   "carro": [
     {
-      "placa": "|asd",
-      "valor": "asd",
-      "id": "asdas324234",
-      "modelo": "asd",
-      "gama": "asd"
-    },
-    {
       "id": 1,
       "placa": 2,
       "modelo": 3,
