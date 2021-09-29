@@ -4,7 +4,7 @@ pipeline {
         label 'Slave_Induccion'
     }
 
-   triggers {
+    triggers {
         pollSCM('* * * * *')
     }
 
@@ -65,6 +65,9 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+        }
+        cleanup {
+            cleanWs()
         }
         success {
             echo 'This will run only if successful'
