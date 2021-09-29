@@ -10,7 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-junit-reporter'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
       require('karma-sonarqube-reporter')
     ],
@@ -24,9 +24,9 @@ module.exports = function (config) {
         lcovonly: 'reports/test-results/coverage/coverage.lcov'
       }
     },
-    coverageIstanbulReporter: {
+    coverageReporter: {
       dir: require('path').join(__dirname, 'reports/coverage/app-base'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reporters: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml', 'junit', 'sonarqube'],
