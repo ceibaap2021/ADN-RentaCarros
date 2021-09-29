@@ -28,8 +28,6 @@ export class ListarProductoComponent implements OnInit {
 
   }
   public eliminar(data) {
-    console.log(data);
-
     this.productoService.eliminar(data).subscribe(() => {
       this.consultar();
     });

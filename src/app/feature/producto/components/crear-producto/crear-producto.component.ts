@@ -16,11 +16,7 @@ export class CrearProductoComponent implements OnInit {
   }
 
   async crear() {
-    console.log(this.productoForm.value);
-
-    const result = await this.productoServices.guardar(this.productoForm.value);
-    console.log(result);
-
+   this.productoServices.guardar(this.productoForm.value);
   }
 
   private construirFormularioProducto() {
