@@ -1,22 +1,50 @@
 <h1>Registrar Producto</h1>
 <h3>Ejemplo validacion de formularios reactivos con directiva</h3>
-<form [formGroup]="productoForm" (ngSubmit)="cerar()">
+<form [formGroup]="productoForm" (ngSubmit)="crear()">
   <div class="row">
-    <div class="col-sm-2">
-      <label>Id:</label>
+    <div>
+      <label>id:</label>
     </div>
-    <div class="col-sm-4">
+    <div>
       <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
-        formControlName="id">
+      formControlName="id">
+      <!-- <mat-form-field>
+        <mat-label>id</mat-label>
+        <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
+          formControlName="id">
+      </mat-form-field> -->
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-2">
-      <label>Descripción:</label>
+    <div>
+      <label>placa:</label>
     </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
-        class="form-control" formControlName="descripcion">
+    <div>
+      <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
+        formControlName="placa">
     </div>
   </div>
+  <div class="row">
+    <div>
+      <label>modelo:</label>
+    </div>
+    <div>
+      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
+        class="form-control" formControlName="modelo">
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <label>valor:</label>
+    </div>
+    <div>
+      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
+        class="form-control" formControlName="valor">
+    </div>
+    <div>
+      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
+        class="form-control" formControlName="gama">
+    </div>
+  </div>
+  <button type="submit">Guardar</button>
 </form>

@@ -1,12 +1,6 @@
 {
   "carro": [
     {
-      "id": 1121,
-      "placa": 1,
-      "modelo": 1,
-      "valor": 1
-    },
-    {
       "id": 2,
       "placa": 1,
       "modelo": 1,
@@ -15,31 +9,17 @@
     },
     {
       "placa": "asdasd",
-      "valor": "ASDAS",
-      "id": "asdas",
-      "gama": "ASDAS",
-      "modelo": "ASDAS"
-    },
-    {
-      "placa": "asdasd",
-      "valor": "ASDAS",
-      "id": "s",
-      "gama": "ASDAS",
-      "modelo": "ASDAS"
-    },
-    {
-      "placa": "asdas",
-      "valor": "dasd",
-      "id": "WSD213a",
+      "valor": "asdasd",
+      "id": "asdasd",
       "gama": "asdasd",
       "modelo": "asdasd"
     },
     {
       "placa": "asdasd",
       "valor": "asdasd",
-      "id": "asdasd",
-      "gama": "asdasd",
-      "modelo": "asdasd"
+      "id": "ssdasd",
+      "modelo": "asdasd",
+      "gama": "asdasd"
     }
   ]
 }

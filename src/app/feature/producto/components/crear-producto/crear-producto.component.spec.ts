@@ -3,11 +3,11 @@ import { of } from 'rxjs';
 
 import { CrearProductoComponent } from './crear-producto.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ProductoService } from '../../shared/service/producto.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CrearProductoComponent', () => {
   let component: CrearProductoComponent;
@@ -18,8 +18,8 @@ describe('CrearProductoComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CrearProductoComponent ],
       imports: [
+        HttpClientTestingModule,
         CommonModule,
-        HttpClientModule,
         RouterTestingModule,
         ReactiveFormsModule,
         FormsModule
@@ -34,7 +34,7 @@ describe('CrearProductoComponent', () => {
     component = fixture.componentInstance;
     productoService = TestBed.inject(ProductoService);
     spyOn(productoService, 'guardar').and.returnValue(
-      of(true)
+      of(true).toPromise()
     );
     fixture.detectChanges();
   });
@@ -50,10 +50,13 @@ describe('CrearProductoComponent', () => {
   it('Registrando producto', () => {
     expect(component.productoForm.valid).toBeFalsy();
     component.productoForm.controls.id.setValue('001');
-    component.productoForm.controls.descripcion.setValue('Producto test');
+    component.productoForm.controls.placa.setValue('Producto test');
+    component.productoForm.controls.valor.setValue('Producto test');
+    component.productoForm.controls.modelo.setValue('Producto test');
+    component.productoForm.controls.gama.setValue('Producto test');
     expect(component.productoForm.valid).toBeTruthy();
 
-    component.cerar();
+    component.crear();
 
     // Aca validamos el resultado esperado al enviar la petición
     // TODO adicionar expect
