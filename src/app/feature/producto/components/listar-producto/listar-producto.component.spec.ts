@@ -13,7 +13,7 @@ describe('ListarProductoComponent', () => {
   let component: ListarProductoComponent;
   let fixture: ComponentFixture<ListarProductoComponent>;
   let productoService: ProductoService;
-  const listaProductos: Producto[] = [new Producto('1', 'Producto 1', 'Producto 1', 'Producto 1', 'Producto 1'), new Producto('2', 'Producto 2', 'Producto 1', 'Producto 1', 'Producto 1')];
+  const dataSource: Producto[] = [new Producto('1', 'Producto 1', 'Producto 1', 'Producto 1', 'Producto 1'), new Producto('2', 'Producto 2', 'Producto 1', 'Producto 1', 'Producto 1')];
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -33,14 +33,14 @@ describe('ListarProductoComponent', () => {
     component = fixture.componentInstance;
     productoService = TestBed.inject(ProductoService);
     spyOn(productoService, 'consultar').and.returnValue(
-      of(listaProductos)
+      of(dataSource)
     );
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('debe crear', () => {
     expect(component).toBeTruthy();
-    component.listaProductos.subscribe(resultado => {
+    component.dataSource.subscribe(resultado => {
       expect(2).toBe(resultado.length);
   });
 });
