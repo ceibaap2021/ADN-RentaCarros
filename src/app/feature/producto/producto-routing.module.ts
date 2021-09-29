@@ -11,14 +11,15 @@ const routes: Routes = [
     component: ListarProductoComponent,
     children: [
       {
-        path: 'crear',
-        component: CrearProductoComponent
-      },
-      {
         path: 'borrar',
         component: BorrarProductoComponent
       }
-    ]
+    ],
+
+  },
+  {
+    path: 'crear',
+    component: CrearProductoComponent
   }
 ];
 

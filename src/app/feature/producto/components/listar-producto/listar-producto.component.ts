@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 
 import { ProductoService } from '@producto/shared/service/producto.service';
 import { Producto } from '@producto/shared/model/producto';
-
 @Component({
   selector: 'app-listar-producto',
   templateUrl: './listar-producto.component.html',
@@ -16,9 +15,6 @@ export class ListarProductoComponent implements OnInit {
   public dataSource : Observable<Producto[]>;
   constructor(protected productoService: ProductoService) { }
 
-  // ngOnInit() {
-  //   this.listaProductos = this.productoService.consultar();
-  // }
   ngOnInit() {
     this.consultar();
   }

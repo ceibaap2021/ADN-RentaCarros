@@ -1,10 +1,6 @@
-
-<div fxLayoutAlign="center center" fxFlex="100">
-  <h3>Renta de carros</h3>
-</div>
 <div class="pd-table">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <caption>Schedule for the week of March 6</caption>
+    <caption>Renta de carros</caption>
       <ng-container matColumnDef="placa">
           <th mat-header-cell *matHeaderCellDef> Placa </th>
           <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
@@ -31,7 +27,7 @@
               <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
 
                   <section>
-                      <div (click)="eliminar(element)">
+                      <div (click)="eliminar(element)" id="eliminar">
                           <button matTooltip="Eliminar" matTooltipClass="example-tooltip-red"
                               matTooltipPosition="above" mat-mini-fab color="primary"
                               aria-label="Example icon button with a menu icon">
