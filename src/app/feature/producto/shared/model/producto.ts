@@ -1,9 +1,20 @@
 export class Producto {
     id: string;
-    descripcion: string;
+    placa: string;
+    modelo: string;
+    gama: string;
+    valor: string;
 
-    constructor(id: string, descripcion: string) {
+    constructor(
+        id: string,
+        placa: string,
+        modelo: string,
+        gama: string,
+        valor: string,) {
         this.id = id;
-        this.descripcion = descripcion;
+        this.placa = placa;
+        this.modelo = modelo;
+        this.gama = gama;
+        this.valor = valor;
     }
 }
