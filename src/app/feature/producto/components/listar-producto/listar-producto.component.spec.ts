@@ -14,7 +14,13 @@ describe('ListarProductoComponent', () => {
   let fixture: ComponentFixture<ListarProductoComponent>;
   let productoService: ProductoService;
   const dataSource: Producto[] = [new Producto('1', 'Producto 1', 'Producto 1', 'Producto 1', 'Producto 1'), new Producto('2', 'Producto 2', 'Producto 1', 'Producto 1', 'Producto 1')];
-  const dummyIdTransfer = 1;
+  const dummyIdTransfer = {
+    "id": 1,
+    "placa": 2,
+    "modelo": 3,
+    "gama": 4,
+    "valor": 5
+  };
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ListarProductoComponent],
