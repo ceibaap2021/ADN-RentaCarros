@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { ProductoRoutingModule } from './producto-routing.module';
 import { BorrarProductoComponent } from './components/borrar-producto/borrar-producto.component';
 import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
@@ -17,6 +17,7 @@ import { ProductoService } from './shared/service/producto.service';
     ProductoComponent
   ],
   imports: [
+    CommonModule,
     ProductoRoutingModule,
     SharedModule
   ],

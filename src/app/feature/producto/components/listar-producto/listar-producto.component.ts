@@ -11,11 +11,28 @@ import { Producto } from '@producto/shared/model/producto';
 })
 export class ListarProductoComponent implements OnInit {
   public listaProductos: Observable<Producto[]>;
-
+  public isEdit: boolean;
+  public displayedColumns: string[] = ['placa', 'modelo', 'gama', 'valor', 'selected'];
+  public dataSource : Observable<Producto[]>;
   constructor(protected productoService: ProductoService) { }
 
+  // ngOnInit() {
+  //   this.listaProductos = this.productoService.consultar();
+  // }
   ngOnInit() {
-    this.listaProductos = this.productoService.consultar();
+    this.consultar();
   }
 
+  public consultar() {
+    this.dataSource = this.productoService.consultar();
+
+  }
+  public eliminar(data) {
+    console.log(data);
+
+    this.productoService.eliminar(data).subscribe(() => {
+      this.consultar();
+    });
+  }
+ 
 }
