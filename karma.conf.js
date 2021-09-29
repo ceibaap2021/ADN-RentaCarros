@@ -18,7 +18,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     remapIstanbulReporter: {
-      dir : 'reports/test-results/coverage',
+      dir: 'reports/test-results/coverage',
       reports: {
         html: 'coverage',
         lcovonly: 'reports/test-results/coverage/coverage.lcov'
@@ -29,7 +29,7 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml','junit', 'sonarqube'],
+    reporters: ['progress', 'kjhtml', 'junit', 'sonarqube'],
     htmlReporter: {
       outputFile: 'reports/unit/units.html',
 
@@ -43,15 +43,15 @@ module.exports = function (config) {
       outputFile: 'test-results.xml',
       suite: '',
       useBrowserName: false
-   },
-   sonarqubeReporter: {
-    basePath: 'src/app',        // test files folder
-    filePattern: '**/*spec.ts', // test files glob pattern
-    encoding: 'utf-8',          // test files encoding
-    outputFolder: 'reports/unit',    // report destination
-    legacyMode: false,          // report for Sonarqube < 6.2 (disabled)
-    reportName: 'test-sonar.xml'
-  },
+    },
+    sonarqubeReporter: {
+      basePath: 'src/app',
+      filePattern: '**/*spec.ts',
+      encoding: 'utf-8',
+      outputFolder: 'reports/unit',
+      legacyMode: false,
+      reportName: 'test-sonar.xml'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
