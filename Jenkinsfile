@@ -57,7 +57,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'ng build --prod'
+                sh 'npm run build --prod'
             }
         }
     }
@@ -65,8 +65,6 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-        }
-        cleanup {
             cleanWs()
         }
         success {
