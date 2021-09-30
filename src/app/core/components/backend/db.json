@@ -6,6 +6,20 @@
       "modelo": 3,
       "gama": 4,
       "valor": 5
+    },
+    {
+      "id": 2,
+      "placa": 1,
+      "modelo": 1,
+      "gama": 1,
+      "valor": 1
+    },
+    {
+      "id": 3,
+      "placa": 1,
+      "modelo": 1,
+      "gama": 1,
+      "valor": 1
     }
   ]
 }
