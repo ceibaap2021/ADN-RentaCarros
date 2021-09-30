@@ -44,13 +44,8 @@ describe('ProductoService', () => {
   it('deberia crear un producto', () => {
 
     const dummyProducto = new Producto('1121', '1121', '1121', '1121', '1121');
-    // const result = service.guardar(dummyProducto);
 
     spyOn(service, 'guardar').withArgs(dummyProducto).and.returnValue(of(true).toPromise());
-    // const req = httpMock.expectOne(apiEndpointProductos);
-    // expect(result).toEqual(true);
-    // expect(req.request.method).toBe('POST');
-    // req.event(new HttpResponse<boolean>({ body: true }));
   });
 
   it('deberia eliminar un producto', () => {
