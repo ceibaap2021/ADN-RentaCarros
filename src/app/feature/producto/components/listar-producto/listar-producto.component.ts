@@ -12,7 +12,7 @@ export class ListarProductoComponent implements OnInit {
   public listaProductos: Observable<Producto[]>;
   public isEdit: boolean;
   public displayedColumns: string[] = ['placa', 'modelo', 'gama', 'valor', 'selected'];
-  public dataSource : Observable<Producto[]>;
+  public dataSource: Observable<Producto[]>;
   constructor(protected productoService: ProductoService) { }
 
   ngOnInit() {

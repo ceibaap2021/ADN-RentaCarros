@@ -10,7 +10,7 @@ export class Producto {
         placa: string,
         modelo: string,
         gama: string,
-        valor: string,) {
+        valor: string) {
         this.id = id;
         this.placa = placa;
         this.modelo = modelo;
