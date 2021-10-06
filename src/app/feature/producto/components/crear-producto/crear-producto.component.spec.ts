@@ -39,24 +39,21 @@ describe('CrearProductoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('formulario es invalido cuando esta vacio', () => {
     expect(component.productoForm.valid).toBeFalsy();
   });
 
   it('Registrando producto', () => {
     expect(component.productoForm.valid).toBeFalsy();
-    component.productoForm.controls.id.setValue('001');
-    component.productoForm.controls.placa.setValue('Producto test');
-    component.productoForm.controls.valor.setValue('Producto test');
-    component.productoForm.controls.modelo.setValue('Producto test');
-    component.productoForm.controls.gama.setValue('Producto test');
+    component.productoForm.get('id').setValue('005');
+    component.productoForm.get('placa').setValue('Producto test');
+    component.productoForm.get('valor').setValue('Producto test');
+    component.productoForm.get('modelo').setValue('Producto test');
+    component.productoForm.get('gama').setValue('Alta');
+    component.productoForm.get('estado').setValue(true);
     expect(component.productoForm.valid).toBeTruthy();
 
-    component.crear();
+    component.guardar();
 
     // Aca validamos el resultado esperado al enviar la petición
     // TODO adicionar expect

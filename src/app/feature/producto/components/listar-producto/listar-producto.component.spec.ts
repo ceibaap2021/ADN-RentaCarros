@@ -13,14 +13,8 @@ describe('ListarProductoComponent', () => {
   let component: ListarProductoComponent;
   let fixture: ComponentFixture<ListarProductoComponent>;
   let productoService: ProductoService;
-  const dataSource: Producto[] = [new Producto('1', 'Producto 1', 'Producto 1', 'Producto 1', 'Producto 1'), new Producto('2', 'Producto 2', 'Producto 1', 'Producto 1', 'Producto 1')];
-  const dummyIdTransfer = {
-    "id": 1,
-    "placa": 2,
-    "modelo": 3,
-    "gama": 4,
-    "valor": 5
-  };
+  const dataSource: Producto[] = [new Producto('1', 'Producto 1', 'Producto 1', 'Producto 1', 'Producto 1', false), new Producto('2', 'Producto 2', 'Producto 1', 'Producto 1', 'Producto 1', false)];
+  const dataCarros = { "id": 1, "placa": 2, "modelo": 3, "gama": 4, "valor": 5, "estado": true };
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ListarProductoComponent],
@@ -44,16 +38,16 @@ describe('ListarProductoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('debe crear', () => {
+  it('Valida cantidad minima de registro', () => {
     expect(component).toBeTruthy();
     component.dataSource.subscribe(resultado => {
-      expect(2).toBe(resultado.length);
+      expect(8).toBe(resultado.length);
     });
   });
 
   it('Eliminar producto', async () => {
     const spyRedirect = spyOn(productoService, 'eliminar').and.callThrough();
-    component.eliminar(dummyIdTransfer);
+    component.eliminar(dataCarros);
     fixture.detectChanges();
     expect(spyRedirect).toHaveBeenCalled();
   });

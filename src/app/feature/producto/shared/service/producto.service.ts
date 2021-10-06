@@ -12,10 +12,17 @@ export class ProductoService {
   public consultar() {
     return this.http.doGet<Producto[]>(`${environment.endpoint}/carro`, this.http.optsName('consultar carro'));
   }
+  public consultarIdCarro(id: number) {
+    return this.http.doGet<Producto[]>(`${environment.endpoint}/carro/${id}`, this.http.optsName('consultar carro')).toPromise();
+  }
 
   public guardar(producto: Producto) {
     return this.http.doPost<Producto, boolean>(`${environment.endpoint}/carro`, producto,
-      this.http.optsName('crear/actualizar carro')).toPromise();
+      this.http.optsName('crear carro')).toPromise();
+  }
+  public editar(producto: Producto) {
+    return this.http.doPut<Producto, boolean>(`${environment.endpoint}/carro/${producto.id}`, producto,
+      this.http.optsName('actualizar carro')).toPromise();
   }
 
   public eliminar(producto: Producto) {

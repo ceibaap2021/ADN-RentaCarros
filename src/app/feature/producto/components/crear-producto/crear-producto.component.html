@@ -1,48 +1,66 @@
-<h1>Registrar Producto</h1>
-<h3>Ejemplo validacion de formularios reactivos con directiva</h3>
-<form [formGroup]="productoForm" (ngSubmit)="crear()">
-  <div class="row">
-    <div>
-      <label>id:</label>
-    </div>
-    <div>
-      <mat-form-field appearance="legacy">
-        <mat-label>Legacy form field</mat-label>
-        <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
-        formControlName="id">
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div>
-      <label>placa:</label>
-    </div>
-    <div>
-      <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
-        formControlName="placa">
-    </div>
-  </div>
-  <div class="row">
-    <div>
-      <label>modelo:</label>
-    </div>
-    <div>
-      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
-        class="form-control" formControlName="modelo">
-    </div>
-  </div>
-  <div class="row">
-    <div>
-      <label>valor:</label>
-    </div>
-    <div>
-      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
-        class="form-control" formControlName="valor">
-    </div>
-    <div>
-      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
-        class="form-control" formControlName="gama">
-    </div>
-  </div>
-  <button type="submit">Guardar</button>
-</form>
+<div fxLayoutAlign="center center" fxLayout="column" fxFlex>
+  <h1> {{tituloFormulario}} </h1>
+  <form [formGroup]="productoForm" (ngSubmit)="guardar()">
+    <mat-card fxFlex.sm="90">
+      <div fxLayout="column">
+        <div fxFlex="90" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="20">
+            <mat-label>Codigo</mat-label>
+            <input matInput validar type="text" id="idProducto" placeholder="Codigo" class="form-control"
+              formControlName="id">
+            <ng-container *ngIf="showMessegeError('id')">
+              <error-campos-plantilla [text]="messegeError('id')"></error-campos-plantilla>
+            </ng-container>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="20">
+            <mat-label>Placa</mat-label>
+            <input matInput validar type="text" id="idProducto" placeholder="Placa" class="form-control"
+              formControlName="placa">
+            <ng-container *ngIf="showMessegeError('placa')">
+              <error-campos-plantilla [text]="messegeError('placa')"></error-campos-plantilla>
+            </ng-container>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="20">
+            <mat-label>Modelo</mat-label>
+            <input matInput validar type="text" id="Modelo" placeholder="Modelo" class="form-control"
+              formControlName="modelo">
+            <ng-container *ngIf="showMessegeError('modelo')">
+              <error-campos-plantilla [text]="messegeError('modelo')"></error-campos-plantilla>
+            </ng-container>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="20">
+            <mat-label>Gama</mat-label>
+            <mat-select formControlName="gama">
+              <mat-option value="ALTA">Alta</mat-option>
+              <mat-option value="MEDIA">Media</mat-option>
+              <mat-option value="BAJA">Baja</mat-option>
+            </mat-select>
+            <ng-container *ngIf="showMessegeError('gama')">
+              <error-campos-plantilla [text]="messegeError('gama')"></error-campos-plantilla>
+            </ng-container>
+          </mat-form-field>
+        </div>
+        <div fxFlex="90" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="70">
+            <mat-label>Precio</mat-label>
+            <input matInput validar type="number" id="Precio" placeholder="Precio" class="form-control"
+              formControlName="valor">
+            <ng-container *ngIf="showMessegeError('valor')">
+              <error-campos-plantilla [text]="messegeError('precio')"></error-campos-plantilla>
+            </ng-container>
+          </mat-form-field>
+
+          <div fxLayoutAlign=" center" fxFlex="20">
+            <mat-slide-toggle formControlName="estado">Disponibilidad</mat-slide-toggle>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayoutAlign="center end">
+        <button mat-raised-button color="primary" type="submit">{{isEdit?'Actualizar':'Guardar'}}</button>
+      </div>
+    </mat-card>
+  </form>

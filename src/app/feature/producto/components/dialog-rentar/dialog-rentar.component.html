@@ -1,0 +1,22 @@
+<caption fxFlex="90" fxLayout="column" class="pd-table">Selecciona tu fecha</caption>
+<div fxLayoutGap="50px">
+    <div fxFlex="90" fxLayoutGap="20px">
+        <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label>Fecha Inicial</mat-label>
+            <input matInput [matDatepicker]="dp3">
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label>Fecha final</mat-label>
+            <input matInput [matDatepicker]="dp4">
+            <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+            <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <div (click)="enviar()" id="enviar">
+            <button matTooltip="Enviar" matTooltipClass="example-tooltip-red" matTooltipPosition="above"
+                mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
+    </div>

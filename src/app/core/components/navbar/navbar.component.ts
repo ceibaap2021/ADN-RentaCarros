@@ -10,10 +10,12 @@ import { MenuItem } from '@core/modelo/menu-item';
     display: block;
     height: 48px;
     padding: 0 16px;
+    background-color: #00a399;
+    color: rgba(255, 255, 255, 0.87);
   }
 
   nav a {
-    color: #8f8f8f;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 500;
     line-height: 48px;
