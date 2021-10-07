@@ -44,7 +44,7 @@ export class ListarProductoComponent implements OnInit {
 
   public openDialog(): void {
     const dialogRef = this.dialog.open(DialogRentarComponent, {
-      width: '800px',
+      width: '700px',
       data: { name: this.idData }
     });
 
