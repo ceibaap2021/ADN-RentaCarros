@@ -13,7 +13,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 describe('CrearProductoComponent', () => {
@@ -37,7 +36,6 @@ describe('CrearProductoComponent', () => {
         BrowserAnimationsModule,
         MatInputModule,
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [ProductoService, HttpService],
     })
       .compileComponents();

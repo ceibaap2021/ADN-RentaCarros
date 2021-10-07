@@ -16,7 +16,9 @@
       "id": "54548",
       "modelo": "ASD",
       "gama": "MEDIO",
-      "estado": false
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
     },
     {
       "placa": "ASD-5551",
@@ -24,7 +26,7 @@
       "id": "221",
       "modelo": "SDA",
       "gama": "BAJA",
-      "estado": false,
+      "estado": true,
       "fechaInicial": "",
       "fechaFinal": ""
     },
@@ -34,7 +36,9 @@
       "id": "520",
       "modelo": "12321",
       "gama": "MEDIA",
-      "estado": false
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
     },
     {
       "placa": "ASD-852",
@@ -42,7 +46,9 @@
       "id": "5632",
       "modelo": "DSADAS",
       "gama": "ALTA",
-      "estado": false
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
     },
     {
       "placa": "asdasd",
@@ -50,7 +56,9 @@
       "id": "6562",
       "modelo": "asdas",
       "gama": "MEDIA",
-      "estado": null
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
     },
     {
       "placa": "asdas",
@@ -68,7 +76,7 @@
       "id": "asdas1",
       "modelo": "dasdas",
       "gama": "MEDIA",
-      "estado": null,
+      "estado": false,
       "fechaInicial": "",
       "fechaFinal": ""
     }
