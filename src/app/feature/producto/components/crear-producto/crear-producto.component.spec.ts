@@ -12,7 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from '@shared/shared.module';
+import { MatInputModule } from '@angular/material/input';
 
 
 describe('CrearProductoComponent', () => {
@@ -33,8 +33,8 @@ describe('CrearProductoComponent', () => {
         MatSlideToggleModule,
         MatFormFieldModule,
         ReactiveFormsModule,
-        SharedModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatInputModule,
       ],
       providers: [ProductoService, HttpService],
     })
