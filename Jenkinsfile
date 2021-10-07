@@ -4,9 +4,9 @@ pipeline {
         label 'Slave_Induccion'
     }
 
-    triggers {
-        pollSCM('* * * * *')
-    }
+    // triggers {
+    //     pollSCM('* * * * *')
+    // }
 
     //Una sección que define las herramientas preinstaladas en Jenkins
     tools {
