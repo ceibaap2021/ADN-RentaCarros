@@ -38,7 +38,6 @@ describe('CrearProductoComponent', () => {
         SharedModule,
         BrowserAnimationsModule
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [ProductoService, HttpService],
     })
       .compileComponents();
