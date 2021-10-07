@@ -4,7 +4,7 @@ export class Producto {
     modelo: string;
     gama: string;
     valor: string;
-    estado?: boolean;
+    estado: boolean;
 
     constructor(
         id: string,

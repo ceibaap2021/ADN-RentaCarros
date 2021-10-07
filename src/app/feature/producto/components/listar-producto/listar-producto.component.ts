@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogRentarComponent } from '../dialog-rentar/dialog-rentar.component';
 import { SweetAlertService } from '@shared/service/sweet-alert.service';
+import { Producto } from '@producto/shared/model/producto';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-listar-producto',
   templateUrl: './listar-producto.component.html',
@@ -13,7 +15,7 @@ export class ListarProductoComponent implements OnInit {
   public isEdit: boolean;
   public idData: string;
   public displayedColumns: string[] = ['placa', 'modelo', 'gama', 'valor', 'estado', 'selected'];
-  public dataSource;
+  public dataSource: Observable<Producto[]>;
   constructor(
     protected productoService: ProductoService,
     private readonly router: Router,
@@ -47,7 +49,6 @@ export class ListarProductoComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.idData = result;
     });
 

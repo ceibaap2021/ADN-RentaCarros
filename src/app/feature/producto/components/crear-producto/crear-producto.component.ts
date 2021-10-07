@@ -71,7 +71,7 @@ export class CrearProductoComponent implements OnInit {
     });
   }
 
-  private construirFormularioProducto() {
+  public construirFormularioProducto() {
     this.productoForm = new FormGroup({
       placa: new FormControl('', [Validators.required]),
       valor: new FormControl('', [Validators.required]),

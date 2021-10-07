@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'error-campos-plantilla',
+  selector: 'app-error-campos-plantillas',
   templateUrl: './error-campos-plantilla.component.html',
   styles: [`.hide {
     display: none;

@@ -8,6 +8,14 @@ import { ProductoService } from '../../shared/service/producto.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+// import { SharedModule } from '@shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '@shared/shared.module';
+
 
 describe('CrearProductoComponent', () => {
   let component: CrearProductoComponent;
@@ -16,17 +24,24 @@ describe('CrearProductoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrearProductoComponent ],
+      declarations: [CrearProductoComponent],
       imports: [
         HttpClientTestingModule,
         CommonModule,
         RouterTestingModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        MatSelectModule,
+        MatSlideToggleModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        SharedModule,
+        BrowserAnimationsModule
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [ProductoService, HttpService],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -44,18 +59,17 @@ describe('CrearProductoComponent', () => {
   });
 
   it('Registrando producto', () => {
-    expect(component.productoForm.valid).toBeFalsy();
+    console.log(component.productoForm.value);
+
     component.productoForm.get('id').setValue('005');
     component.productoForm.get('placa').setValue('Producto test');
     component.productoForm.get('valor').setValue('Producto test');
     component.productoForm.get('modelo').setValue('Producto test');
     component.productoForm.get('gama').setValue('Alta');
     component.productoForm.get('estado').setValue(true);
-    expect(component.productoForm.valid).toBeTruthy();
 
     component.guardar();
 
-    // Aca validamos el resultado esperado al enviar la petición
-    // TODO adicionar expect
+    expect(component.productoForm.valid).toBeTruthy();
   });
 });

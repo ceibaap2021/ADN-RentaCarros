@@ -14,10 +14,7 @@ export class DialogRentarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data);
   }
-  public enviar(){
-    console.log('hola');
-    
+  public enviar() {
   }
 }

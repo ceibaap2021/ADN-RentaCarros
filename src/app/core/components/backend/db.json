@@ -5,8 +5,8 @@
       "valor": 250600,
       "id": "545",
       "modelo": "4545",
-      "gama": "MEDIA",
-      "estado": false,
+      "gama": "ALTA",
+      "estado": true,
       "fechaInicial": "",
       "fechaFinal": ""
     },
@@ -20,11 +20,13 @@
     },
     {
       "placa": "ASD-5551",
-      "valor": "658465112313131",
+      "valor": 250303030330303,
       "id": "221",
       "modelo": "SDA",
       "gama": "BAJA",
-      "estado": false
+      "estado": false,
+      "fechaInicial": "",
+      "fechaFinal": ""
     },
     {
       "placa": "SAD-555",
@@ -49,14 +51,6 @@
       "modelo": "asdas",
       "gama": "MEDIA",
       "estado": null
-    },
-    {
-      "id": 1,
-      "placa": 2,
-      "modelo": 3,
-      "gama": 4,
-      "valor": 5,
-      "estado": true
     },
     {
       "placa": "asdas",

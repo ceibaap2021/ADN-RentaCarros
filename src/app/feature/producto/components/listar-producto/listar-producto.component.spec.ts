@@ -7,23 +7,25 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProductoService } from '../../shared/service/producto.service';
 import { Producto } from '../../shared/model/producto';
 import { HttpService } from 'src/app/core/services/http.service';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 describe('ListarProductoComponent', () => {
   let component: ListarProductoComponent;
   let fixture: ComponentFixture<ListarProductoComponent>;
   let productoService: ProductoService;
   const dataSource: Producto[] = [new Producto('1', 'Producto 1', 'Producto 1', 'Producto 1', 'Producto 1', false), new Producto('2', 'Producto 2', 'Producto 1', 'Producto 1', 'Producto 1', false)];
-  const dataCarros = { "id": 1, "placa": 2, "modelo": 3, "gama": 4, "valor": 5, "estado": true };
+  const dataCarros = { id: 1, placa: 2, modelo: 3, gama: 4, valor: 5, estado: true };
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ListarProductoComponent],
       imports: [
         CommonModule,
-        HttpClientModule,
-        RouterTestingModule
+        HttpClientTestingModule,
+        RouterTestingModule,
+        MatDialogModule
       ],
-      providers: [ProductoService, HttpService]
+      providers: [ProductoService, HttpService, MatDialog]
     })
       .compileComponents();
   }));
@@ -38,10 +40,10 @@ describe('ListarProductoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Valida cantidad minima de registro', () => {
+  it('Valida tamano de la tablas', () => {
     expect(component).toBeTruthy();
     component.dataSource.subscribe(resultado => {
-      expect(8).toBe(resultado.length);
+      expect(2).toBe(resultado.length);
     });
   });
 

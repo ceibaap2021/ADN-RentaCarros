@@ -9,7 +9,7 @@
             <input matInput validar type="text" id="idProducto" placeholder="Codigo" class="form-control"
               formControlName="id">
             <ng-container *ngIf="showMessegeError('id')">
-              <error-campos-plantilla [text]="messegeError('id')"></error-campos-plantilla>
+              <app-error-campos-plantillas [text]="messegeError('id')"></app-error-campos-plantillas>
             </ng-container>
           </mat-form-field>
 
@@ -18,7 +18,7 @@
             <input matInput validar type="text" id="idProducto" placeholder="Placa" class="form-control"
               formControlName="placa">
             <ng-container *ngIf="showMessegeError('placa')">
-              <error-campos-plantilla [text]="messegeError('placa')"></error-campos-plantilla>
+              <app-error-campos-plantillas [text]="messegeError('placa')"></app-error-campos-plantillas>
             </ng-container>
           </mat-form-field>
 
@@ -27,7 +27,7 @@
             <input matInput validar type="text" id="Modelo" placeholder="Modelo" class="form-control"
               formControlName="modelo">
             <ng-container *ngIf="showMessegeError('modelo')">
-              <error-campos-plantilla [text]="messegeError('modelo')"></error-campos-plantilla>
+              <app-error-campos-plantillas [text]="messegeError('modelo')"></app-error-campos-plantillas>
             </ng-container>
           </mat-form-field>
 
@@ -39,7 +39,7 @@
               <mat-option value="BAJA">Baja</mat-option>
             </mat-select>
             <ng-container *ngIf="showMessegeError('gama')">
-              <error-campos-plantilla [text]="messegeError('gama')"></error-campos-plantilla>
+              <app-error-campos-plantillas [text]="messegeError('gama')"></app-error-campos-plantillas>
             </ng-container>
           </mat-form-field>
         </div>
@@ -49,7 +49,7 @@
             <input matInput validar type="number" id="Precio" placeholder="Precio" class="form-control"
               formControlName="valor">
             <ng-container *ngIf="showMessegeError('valor')">
-              <error-campos-plantilla [text]="messegeError('precio')"></error-campos-plantilla>
+              <app-error-campos-plantillas [text]="messegeError('precio')"></app-error-campos-plantillas>
             </ng-container>
           </mat-form-field>
 

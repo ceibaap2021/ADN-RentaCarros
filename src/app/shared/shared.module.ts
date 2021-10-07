@@ -45,7 +45,7 @@ import { ErrorCamposPlantillaComponent } from './components/error-campos-plantil
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
-    ErrorCamposPlantillaComponent 
+    ErrorCamposPlantillaComponent
   ],
 
 })
