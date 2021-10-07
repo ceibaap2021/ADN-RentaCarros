@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from '@producto/shared/service/producto.service';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogRentarComponent } from '../dialog-rentar/dialog-rentar.component';
+import { Router } from '@angular/router';
 import { SweetAlertService } from '@shared/service/sweet-alert.service';
-import { Producto } from '@producto/shared/model/producto';
 import { Observable } from 'rxjs';
+import { Carro } from '../../shared/model/carro';
+import { CarroService } from '../../shared/service/carro.service';
+import { DialogRentarComponent } from '../dialog-rentar/dialog-rentar.component';
+
 @Component({
-  selector: 'app-listar-producto',
-  templateUrl: './listar-producto.component.html',
-  styleUrls: ['./listar-producto.component.sass']
+  selector: 'app-listar-carro',
+  templateUrl: './listar-carro.component.html',
+  styleUrls: ['./listar-carro.component.sass']
 })
-export class ListarProductoComponent implements OnInit {
+export class ListarCarroComponent implements OnInit {
   public isEdit: boolean;
   public idData: string;
   public displayedColumns: string[] = ['placa', 'modelo', 'gama', 'valor', 'estado', 'selected'];
-  public dataSource: Observable<Producto[]>;
+  public dataSource: Observable<Carro[]>;
   constructor(
-    protected productoService: ProductoService,
+    protected carroService: CarroService,
     private readonly router: Router,
     public dialog: MatDialog,
     public alertService: SweetAlertService
@@ -28,18 +29,18 @@ export class ListarProductoComponent implements OnInit {
   }
 
   public consultar() {
-    this.dataSource = this.productoService.consultar();
+    this.dataSource = this.carroService.consultar();
   }
 
   public eliminar(data) {
-    this.productoService.eliminar(data).subscribe(() => {
+    this.carroService.eliminar(data).subscribe(() => {
       this.consultar();
       this.alertService.alertDeleteSucces();
     });
   }
 
   public editar(idCarro) {
-    this.router.navigateByUrl(`/producto/editar/${idCarro}`);
+    this.router.navigateByUrl(`/carro/editar/${idCarro}`);
   }
 
   public openDialog(): void {

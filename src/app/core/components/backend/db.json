@@ -1,22 +1,12 @@
 {
   "carro": [
     {
-      "placa": "MVC-555",
-      "valor": 250600,
-      "id": "545",
-      "modelo": "4545",
-      "gama": "ALTA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
       "placa": "ASD-555",
       "valor": "656565",
       "id": "54548",
       "modelo": "ASD",
-      "gama": "MEDIO",
-      "estado": true,
+      "gama": "MEDIA",
+      "estado": false,
       "fechaInicial": "",
       "fechaFinal": ""
     },

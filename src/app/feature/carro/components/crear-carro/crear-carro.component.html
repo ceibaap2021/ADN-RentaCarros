@@ -1,0 +1,66 @@
+<div fxLayoutAlign="center center" fxLayout="column" fxFlex>
+    <h1> {{tituloFormulario}} </h1>
+    <form [formGroup]="carroForm" (ngSubmit)="guardar()">
+      <mat-card fxFlex.sm="90">
+        <div fxLayout="column">
+          <div fxFlex="90" fxLayoutGap="20px">
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Codigo</mat-label>
+              <input matInput validar type="text" id="id" placeholder="Codigo" class="form-control"
+                formControlName="id">
+              <ng-container *ngIf="showMessegeError('id')">
+                <app-error-campos-plantillas [text]="messegeError('id')"></app-error-campos-plantillas>
+              </ng-container>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Placa</mat-label>
+              <input matInput validar type="text" id="placa" placeholder="Placa" class="form-control"
+                formControlName="placa">
+              <ng-container *ngIf="showMessegeError('placa')">
+                <app-error-campos-plantillas [text]="messegeError('placa')"></app-error-campos-plantillas>
+              </ng-container>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Modelo</mat-label>
+              <input matInput validar type="text" id="Modelo" placeholder="Modelo" class="form-control"
+                formControlName="modelo">
+              <ng-container *ngIf="showMessegeError('modelo')">
+                <app-error-campos-plantillas [text]="messegeError('modelo')"></app-error-campos-plantillas>
+              </ng-container>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Gama</mat-label>
+              <mat-select formControlName="gama">
+                <mat-option value="ALTA">Alta</mat-option>
+                <mat-option value="MEDIA">Media</mat-option>
+                <mat-option value="BAJA">Baja</mat-option>
+              </mat-select>
+              <ng-container *ngIf="showMessegeError('gama')">
+                <app-error-campos-plantillas [text]="messegeError('gama')"></app-error-campos-plantillas>
+              </ng-container>
+            </mat-form-field>
+          </div>
+          <div fxFlex="90" fxLayoutGap="20px">
+            <mat-form-field appearance="outline" fxFlex="70">
+              <mat-label>Precio</mat-label>
+              <input matInput validar type="number" id="Precio" placeholder="Precio" class="form-control"
+                formControlName="valor">
+              <ng-container *ngIf="showMessegeError('valor')">
+                <app-error-campos-plantillas [text]="messegeError('precio')"></app-error-campos-plantillas>
+              </ng-container>
+            </mat-form-field>
+  
+            <div fxLayoutAlign=" center" fxFlex="20">
+              <mat-slide-toggle formControlName="estado">Disponibilidad</mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+  
+        <div fxLayoutAlign="center end">
+          <button mat-raised-button color="primary" type="submit">{{isEdit?'Actualizar':'Guardar'}}</button>
+        </div>
+      </mat-card>
+    </form>

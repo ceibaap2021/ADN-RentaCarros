@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Producto } from '@producto/shared/model/producto';
+import { Carro } from '../../shared/model/carro';
 
 @Component({
   selector: 'app-dialog-rentar',
@@ -8,13 +8,10 @@ import { Producto } from '@producto/shared/model/producto';
   styleUrls: ['./dialog-rentar.component.sass']
 })
 export class DialogRentarComponent implements OnInit {
-  @Inject(MAT_DIALOG_DATA) public data: Producto;
-  constructor(
-
-  ) { }
+  @Inject(MAT_DIALOG_DATA) public data: Carro;
+  constructor() { }
 
   ngOnInit(): void {
   }
-  public enviar() {
-  }
+
 }

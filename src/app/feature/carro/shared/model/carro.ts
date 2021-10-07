@@ -1,4 +1,4 @@
-export class Producto {
+export class Carro {
     id: string;
     placa: string;
     modelo: string;

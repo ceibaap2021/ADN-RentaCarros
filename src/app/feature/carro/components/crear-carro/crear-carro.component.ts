@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from '../../shared/service/producto.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SweetAlertService } from '@shared/service/sweet-alert.service';
+import { CarroService } from '../../shared/service/carro.service';
 
 @Component({
-  selector: 'app-crear-producto',
-  templateUrl: './crear-producto.component.html',
-  styleUrls: ['./crear-producto.component.sass']
+  selector: 'app-crear-carro',
+  templateUrl: './crear-carro.component.html',
+  styleUrls: ['./crear-carro.component.sass']
 })
-export class CrearProductoComponent implements OnInit {
-  public productoForm: FormGroup;
+export class CrearCarroComponent implements OnInit {
+  public carroForm: FormGroup;
   public isEdit: boolean;
   public idCarro: string;
 
   constructor(
-    protected productoServices: ProductoService,
+    protected carroServices: CarroService,
     private readonly router: Router,
-    public readonly activatedRoute: ActivatedRoute,
-    protected readonly alertService: SweetAlertService) { }
+    public readonly activarRoute: ActivatedRoute,
+    protected readonly alertaServicio: SweetAlertService) { }
 
   ngOnInit() {
-    this.construirFormularioProducto();
-    this.idCarro = this.activatedRoute.snapshot.params?.id || null;
+    this.construirFormulario();
+    this.idCarro = this.activarRoute.snapshot.params?.id || null;
     this.isEdit = !!this.idCarro;
 
     if (this.isEdit) {
@@ -31,19 +31,19 @@ export class CrearProductoComponent implements OnInit {
   }
 
   async guardar() {
-    if (this.productoForm.valid) {
+    if (this.carroForm.valid) {
       try {
         if (this.isEdit) {
-          await this.productoServices.editar(this.productoForm.value);
-          this.alertService.alertEditSucces();
+          await this.carroServices.editar(this.carroForm.value);
+          this.alertaServicio.alertEditSucces();
         }
 
         if (!this.isEdit) {
-          await this.productoServices.guardar(this.productoForm.value);
-          this.alertService.alertCreateSucces();
+          await this.carroServices.guardar(this.carroForm.value);
+          this.alertaServicio.alertCreateSucces();
         }
 
-        this.router.navigateByUrl('/producto/listar');
+        this.router.navigateByUrl('/carro/listar');
       } catch { }
     }
   }
@@ -54,14 +54,14 @@ export class CrearProductoComponent implements OnInit {
 
   public async obtenerCarroId(idCarro) {
     try {
-      const result = await this.productoServices.consultarIdCarro(idCarro);
+      const result = await this.carroServices.consultarIdCarro(idCarro);
       this.setFormCarro(result);
     } catch { }
 
   }
 
   public setFormCarro(result) {
-    this.productoForm.patchValue({
+    this.carroForm.patchValue({
       gama: result.gama,
       modelo: result.modelo,
       id: result.id,
@@ -71,8 +71,8 @@ export class CrearProductoComponent implements OnInit {
     });
   }
 
-  public construirFormularioProducto() {
-    this.productoForm = new FormGroup({
+  public construirFormulario() {
+    this.carroForm = new FormGroup({
       placa: new FormControl('', [Validators.required]),
       valor: new FormControl('', [Validators.required]),
       id: new FormControl('', [Validators.required]),
@@ -86,7 +86,7 @@ export class CrearProductoComponent implements OnInit {
 
   showMessegeError(controlName: string): boolean {
     return (
-      this.productoForm.get(controlName).invalid && this.productoForm.get(controlName).touched
+      this.carroForm.get(controlName).invalid && this.carroForm.get(controlName).touched
     );
   }
 
