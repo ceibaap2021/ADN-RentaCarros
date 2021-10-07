@@ -56,8 +56,6 @@ describe('CrearProductoComponent', () => {
   });
 
   it('Registrando producto', () => {
-    console.log(component.productoForm.value);
-
     component.productoForm.get('id').setValue('005');
     component.productoForm.get('placa').setValue('Producto test');
     component.productoForm.get('valor').setValue('Producto test');
