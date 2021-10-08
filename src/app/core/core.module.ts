@@ -1,6 +1,5 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SecurityGuard } from './guard/security.guard';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpService } from './services/http.service';
@@ -16,7 +15,6 @@ import { ManejadorError } from './interceptor/manejador-error';
   exports: [ToolbarComponent, NavbarComponent],
   providers: [
     HttpService,
-    SecurityGuard,
     { provide: ErrorHandler, useClass: ManejadorError },
   ]
 })
