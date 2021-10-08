@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TrackByPipe } from './pipe/track-by.pipe';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
@@ -21,8 +20,7 @@ import { ErrorCamposPlantillaComponent } from './components/error-campos-plantil
 
 @NgModule({
   declarations: [
-    ErrorCamposPlantillaComponent,
-    TrackByPipe
+    ErrorCamposPlantillaComponent
   ],
   imports: [ReactiveFormsModule, FormsModule],
   exports: [
@@ -30,7 +28,6 @@ import { ErrorCamposPlantillaComponent } from './components/error-campos-plantil
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    TrackByPipe,
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
