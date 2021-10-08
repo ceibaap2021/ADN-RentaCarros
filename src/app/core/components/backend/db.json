@@ -5,7 +5,7 @@
       "valor": "656565",
       "id": "54548",
       "modelo": "ASD",
-      "gama": "MEDIA",
+      "gama": "ALTA",
       "estado": false,
       "fechaInicial": "",
       "fechaFinal": ""
@@ -67,6 +67,16 @@
       "modelo": "dasdas",
       "gama": "MEDIA",
       "estado": false,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "asdasd",
+      "valor": 12312312321,
+      "id": "1221",
+      "modelo": "asdas",
+      "gama": "ALTA",
+      "estado": null,
       "fechaInicial": "",
       "fechaFinal": ""
     }
