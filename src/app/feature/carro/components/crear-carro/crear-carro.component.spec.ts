@@ -75,4 +75,9 @@ describe('CrearCarroComponent', () => {
 
     expect(component.carroForm.valid).toBeTruthy();
   });
+
+  it('Mensaje de error', () => {
+    const control = 'destino';
+    expect(component.messegeError(control)).toEqual('El campo destino, es requerido.');
+  });
 });
