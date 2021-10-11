@@ -42,6 +42,14 @@ describe('CarroService', () => {
     req.flush(carros);
   });
 
+  fit('consultarIdCarro', () => {
+    const idCarro = 221;
+
+    const result = service.consultarIdCarro(idCarro);
+
+    expect(result).toEqual(result);
+  })
+
   it('deberia crear un carro', () => {
 
     const carros = new Carro('1121', '1121', '1121', '1121', '1121', true);
