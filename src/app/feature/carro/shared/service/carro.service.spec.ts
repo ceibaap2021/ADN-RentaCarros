@@ -49,12 +49,21 @@ describe('CarroService', () => {
 
     expect(result).toEqual(result);
   })
+  it('editarCarro', () => {
+    const idCarro = new Carro('1', 'Carro 1', 'Carro 1', 'Carro 1', 'Carro 1', true);
+
+    const result = service.editar(idCarro);
+
+    expect(result).toEqual(result);
+  })
 
   it('deberia crear un carro', () => {
 
     const carros = new Carro('1121', '1121', '1121', '1121', '1121', true);
 
-    spyOn(service, 'guardar').withArgs(carros).and.returnValue(of(true).toPromise());
+    const result = spyOn(service, 'guardar').withArgs(carros).and.returnValue(of(true).toPromise());
+
+    expect(result).toEqual(result);
   });
 
   it('deberia eliminar un carro', () => {
