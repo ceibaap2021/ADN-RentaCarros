@@ -5,7 +5,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpService } from './services/http.service';
 import { RouterModule } from '@angular/router';
 import { ManejadorError } from './interceptor/manejador-error';
-import { SecurityGuard } from './guard/security.guard';
 
 @NgModule({
   declarations: [ToolbarComponent, NavbarComponent],
@@ -16,7 +15,6 @@ import { SecurityGuard } from './guard/security.guard';
   exports: [ToolbarComponent, NavbarComponent],
   providers: [
     HttpService,
-    SecurityGuard,
     { provide: ErrorHandler, useClass: ManejadorError }
   ]
 })
