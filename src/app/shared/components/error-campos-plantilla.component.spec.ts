@@ -22,4 +22,9 @@ describe('ErrorCamposPlantillaComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Debe mostrar el mensaje', () => {
+    component.text = 'Error en el campo';
+    expect(component.ocultar).toBeFalse();
+  });
 });
