@@ -33,9 +33,11 @@ export class DialogRentarComponent implements OnInit {
     if (!fechaFinal) {
       return 0;
     }
-
+    const num1=1000;
+    const num2=1000;
+    const num3=1000;
     const diffTime = fechaFinal?.getTime?.() - fechaInicial?.getTime?.();
-    this.numeroDias = diffTime / (1000 * 60 * 60 * 24);
+    this.numeroDias = diffTime / (num1 * num2 * num2 * num3);
 
     return this.numeroDias * Number(this.data.valor);
   }
