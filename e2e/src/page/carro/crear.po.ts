@@ -1,8 +1,8 @@
 import { by, element } from 'protractor';
 
 export class CrearPage {
-    private linkCrearProducto = element(by.id('linkCrearProducto'));
-    private linkListarProductos = element(by.id('linkListarProducto'));
+    private linkCrearCarro = element(by.id('linkCrearCarro'));
+    private linkListarCarros = element(by.id('linkListarCarro'));
     private inputCodigoCarro = element(by.id('codigoCarro'));
     private inputPlacaCarro = element(by.id('placaCarro'));
     private inputModeloCarro = element(by.id('modeloCarro'));
@@ -14,12 +14,12 @@ export class CrearPage {
     async mensajeExitoso() {
         await this.btnguardarCarro.isDisplayed();
     }
-    async clickBotonCrearProductos() {
-        await this.linkCrearProducto.click();
+    async clickBotonCrearCarros() {
+        await this.linkCrearCarro.click();
     }
 
-    async clickBotonListarProductos() {
-        await this.linkListarProductos.click();
+    async clickBotonListarCarros() {
+        await this.linkListarCarros.click();
     }
 
     async ingresarId(idCarro) {

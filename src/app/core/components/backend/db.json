@@ -69,6 +69,16 @@
       "estado": true,
       "fechaInicial": "",
       "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-856",
+      "valor": 8901,
+      "id": "8",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": null,
+      "fechaInicial": "",
+      "fechaFinal": ""
     }
   ]
 }

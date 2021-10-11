@@ -1,7 +1,7 @@
 import { by, element } from 'protractor';
 
 export class EditarPage {
-    private linkListarProductos = element(by.id('linkListarProducto'));
+    private linkListarCarros = element(by.id('linkListarCarro'));
     private modalAlertSucces = element(by.xpath('/html/body/div[3]/div/div[6]/button[1]'));
     private textEditar = element(by.xpath('/html/body/app-root/app-crear-carro/div/h1'));
     private textListar = element(by.xpath('/html/body/app-root/app-listar-carro/div/table/caption'));
@@ -40,7 +40,7 @@ export class EditarPage {
         await this.btnEditarCarro.click();
     }
     async clickBotonListarCarro() {
-        await this.linkListarProductos.click();
+        await this.linkListarCarros.click();
     }
     async textLabelEditar() {
         await this.textEditar.isDisplayed();
