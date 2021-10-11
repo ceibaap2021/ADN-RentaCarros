@@ -51,8 +51,18 @@ describe('CrearCarroComponent', () => {
   });
 
   it('formulario es invalido cuando esta vacio', () => {
+    component.carroForm.get('id').setValue('');
+    component.carroForm.get('placa').setValue('');
+    component.carroForm.get('valor').setValue('');
+    component.carroForm.get('modelo').setValue('');
+    component.carroForm.get('gama').setValue('');
+    component.carroForm.get('estado').setValue('');
+
+    component.guardar();
+
     expect(component.carroForm.valid).toBeFalsy();
   });
+
   it('Registrando carro', () => {
     component.carroForm.get('id').setValue('005');
     component.carroForm.get('placa').setValue('carro test');

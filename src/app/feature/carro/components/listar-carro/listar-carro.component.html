@@ -50,11 +50,11 @@
                         </div>
                     </section>
                     <section>
-                        <div>
-                            <button [disabled]="element.estado===false" (click)="openDialog()" matTooltip="Rentar"
-                                matTooltipClass="example-tooltip-red" matTooltipPosition="above" mat-mini-fab
-                                color="primary" aria-label="Example icon button with a menu icon">
-                                <mat-icon>money</mat-icon>
+                        <div id="rentar">
+                            <button id="rentar" [disabled]="!element.estado" (click)="openDialog(element)"
+                                matTooltip="Rentar" matTooltipClass="example-tooltip-red" matTooltipPosition="above"
+                                mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                                <mat-icon>price_change</mat-icon>
                             </button>
                         </div>
                     </section>

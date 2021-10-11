@@ -1,82 +1,72 @@
 {
   "carro": [
     {
-      "placa": "ASD-555",
-      "valor": "656565",
-      "id": "54548",
-      "modelo": "ASD",
-      "gama": "ALTA",
-      "estado": false,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "ASD-5551",
-      "valor": 250303030330303,
-      "id": "221",
-      "modelo": "SDA",
-      "gama": "BAJA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "SAD-555",
-      "valor": "51656",
-      "id": "520",
-      "modelo": "12321",
-      "gama": "MEDIA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "ASD-852",
-      "valor": "16564",
-      "id": "5632",
-      "modelo": "DSADAS",
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "005021",
+      "modelo": "2018",
       "gama": "ALTA",
       "estado": true,
       "fechaInicial": "",
       "fechaFinal": ""
     },
     {
-      "placa": "asdasd",
-      "valor": "323232",
-      "id": "6562",
-      "modelo": "asdas",
-      "gama": "MEDIA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "asdas",
-      "valor": "sdaasdsa",
-      "id": "asdas",
-      "modelo": "dasdas",
-      "gama": "MEDIA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "asdas",
-      "valor": "sdaasdsa",
-      "id": "asdas1",
-      "modelo": "dasdas",
-      "gama": "MEDIA",
-      "estado": false,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "asdasd",
-      "valor": 12312312321,
-      "id": "1221",
-      "modelo": "asdas",
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "005901",
+      "modelo": "2018",
       "gama": "ALTA",
-      "estado": null,
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "5001",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "50401",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "5004",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "50051",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": true,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-856",
+      "valor": 8900,
+      "id": "505501",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": true,
       "fechaInicial": "",
       "fechaFinal": ""
     }

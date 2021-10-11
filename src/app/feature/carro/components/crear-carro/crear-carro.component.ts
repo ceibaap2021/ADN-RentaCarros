@@ -13,6 +13,7 @@ export class CrearCarroComponent implements OnInit {
   public carroForm: FormGroup;
   public isEdit: boolean;
   public idCarro: string;
+  public value: string;
 
   constructor(
     protected carroServices: CarroService,
@@ -33,6 +34,11 @@ export class CrearCarroComponent implements OnInit {
   async guardar() {
     if (this.carroForm.valid) {
       try {
+        const data = this.carroForm.value;
+        if (data.estado) {
+          data.fechaInicial = '';
+          data.fechaFinal = '';
+        }
         if (this.isEdit) {
           await this.carroServices.editar(this.carroForm.value);
           this.alertaServicio.alertEditSucces();
@@ -56,6 +62,7 @@ export class CrearCarroComponent implements OnInit {
     try {
       const result = await this.carroServices.consultarIdCarro(idCarro);
       this.setFormCarro(result);
+      this.change(result);
     } catch { }
 
   }
@@ -69,6 +76,14 @@ export class CrearCarroComponent implements OnInit {
       valor: result.valor,
       estado: result.estado,
     });
+  }
+  public change(result) {
+    this.value = result;
+    if (result.fechaInicial === '' && result.fechaFinal === '') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public construirFormulario() {

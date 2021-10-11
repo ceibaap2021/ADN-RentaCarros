@@ -39,19 +39,21 @@ export class ListarCarroComponent implements OnInit {
     });
   }
 
-  public editar(idCarro) {
-    this.router.navigateByUrl(`/carro/editar/${idCarro}`);
+  public editar(idCarro): void {
+    this.router.navigate([`/carro/editar/${idCarro}`]);
   }
 
-  public openDialog(): void {
+  public openDialog(data): void {
     const dialogRef = this.dialog.open(DialogRentarComponent, {
       width: '700px',
-      data: { name: this.idData }
+      data
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.idData = result;
-    });
+    dialogRef.afterClosed().subscribe((result) => this.rentarCarro({ ...data, ...result }));
+  }
 
+  public rentarCarro(data) {
+    data.estado = !(data.fechaInicial && data.fechaFinal);
+    this.carroService.editar(data);
   }
 }

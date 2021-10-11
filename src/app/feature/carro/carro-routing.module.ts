@@ -4,24 +4,21 @@ import { CrearCarroComponent } from './components/crear-carro/crear-carro.compon
 import { ListarCarroComponent } from './components/listar-carro/listar-carro.component';
 
 const routes: Routes = [
-    {
-      path: 'listar',
-      component: ListarCarroComponent,
-    },
-    {
-      path: 'crear',
-      component: CrearCarroComponent
-    },
-    {
-      path: 'editar/:id',
-      component: CrearCarroComponent
-    }
-  ];
-
-  
+  {
+    path: 'listar',
+    component: ListarCarroComponent,
+  },
+  {
+    path: 'crear',
+    component: CrearCarroComponent
+  },
+  {
+    path: 'editar/:id',
+    component: CrearCarroComponent
+  }
+];
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-  })
-  export class CarroRoutingModule {}
-  
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class CarroRoutingModule { }

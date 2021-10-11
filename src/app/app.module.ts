@@ -8,6 +8,7 @@ import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { SharedModule } from '@shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarroModule } from '@carro/carro.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
+    CarroModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CoreModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

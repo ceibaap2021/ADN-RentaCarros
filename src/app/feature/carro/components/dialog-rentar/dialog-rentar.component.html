@@ -1,1 +1,59 @@
-<p>dialog-rentar works!</p>
+<div fxLayoutAlign="center center" fxLayout="column" fxFlex>
+    <h3>Renta tu vehiculo</h3>
+    <div fxFlex="90" fxLayoutGap="20px" fxFlexAlign="row">
+        <form [formGroup]="carroForm" (ngSubmit)="dialogRef.close(carroForm.value)">
+            <div fxLayout="column">
+                <div fxFlex fxFlexAlign="row" fxLayoutGap="10px">
+                    <div fxFlex="45" class="border">
+                        <mat-label>Placa: {{data.placa}}</mat-label>
+                    </div>
+                    <div fxFlex="45" class="border">
+                        <mat-label>Valor X día: {{data.valor}}</mat-label>
+                    </div>
+                </div>
+                <div fxFlex fxFlexAlign="row" fxLayoutGap="20px">
+                    <div fxFlex="30" class="border">
+                        <mat-label>Placa: {{data.placa}}</mat-label>
+                    </div>
+                    <div fxFlex="30" class="border">
+                        <mat-label>Modelo: {{data.modelo}}</mat-label>
+                    </div>
+                    <div fxFlex="30" class="border">
+                        <mat-label>Gama: {{data.gama}}</mat-label>
+                    </div>
+                </div>
+
+            </div>
+            <div fxLayout="column">
+                <mat-form-field appearance="fill">
+                    <mat-label> Selecciona un rango de fecha</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate formControlName="fechaInicial" placeholder="Fecha Inicial">
+                        <input matEndDate formControlName="fechaFinal" placeholder="Fecha Final">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker [startAt]="today"></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+
+
+            <div fxLayout="column">
+                <mat-label class="border">
+                    Numero de dias a rentar: {{numeroDias}}
+                </mat-label>
+
+                <mat-label class="border">
+                    Valor Total: {{valorRenta | currency}}
+                </mat-label>
+            </div>
+            <div fxLayoutAlign="end center">
+                <button type="submit" matTooltip="Rentar" matTooltipClass="example-tooltip-red"
+                    matTooltipPosition="above" mat-flat-button color="primary"
+                    aria-label="Example icon button with a menu icon">
+                    <mat-icon>monetization_on</mat-icon>
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
