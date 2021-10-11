@@ -14,7 +14,7 @@ describe('workspace-project Carro', () => {
     });
 
     it('Deberia crear Carro', () => {
-        const ID_CARRO = '005021';
+        const ID_CARRO = '8';
         const PLACA_CARRO = 'WSD-856';
         const VALOR_CARRO = '8901';
         const MODELO_CARRO = '2018';
