@@ -33,9 +33,9 @@ describe('CarroService', () => {
     const carros = [
       new Carro('1', 'Carro 1', 'Carro 1', 'Carro 1', 'Carro 1', true), new Carro('2', 'Carro 2', 'Carro 1', 'Carro 1', 'Carro 1', true)
     ];
-    service.consultar().subscribe(carros => {
-      expect(carros.length).toBe(2);
-      expect(carros).toEqual(carros);
+    service.consultar().subscribe(dataCarros => {
+      expect(dataCarros.length).toBe(2);
+      expect(dataCarros).toEqual(dataCarros);
     });
     const req = httpMock.expectOne(apiEndpointCarrosConsulta);
     expect(req.request.method).toBe('GET');

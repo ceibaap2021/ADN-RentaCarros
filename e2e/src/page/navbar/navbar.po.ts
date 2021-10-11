@@ -5,7 +5,7 @@ export class NavbarPage {
     clickBotonListarCarro = element(by.xpath('/html/body/app-root/app-navbar/nav/a[2]'));
     linkCrearCarro = element(by.xpath('/html/body/app-root/app-navbar/nav/a[3]'));
     btnCarroCreado = element(by.xpath('//*[@id="swal2-title"]'));
-    btnEliminarCarro= element(by.xpath('//*[@id="eliminar"]/button'));
+    btnEliminarCarro = element(by.xpath('//*[@id="eliminar"]/button'));
 
     async clickBotonListarCarros() {
         await this.clickBotonListarCarro.click();

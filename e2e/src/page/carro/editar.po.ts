@@ -5,7 +5,6 @@ export class EditarPage {
     private modalAlertSucces = element(by.xpath('/html/body/div[3]/div/div[6]/button[1]'));
     private textEditar = element(by.xpath('/html/body/app-root/app-crear-carro/div/h1'));
     private textListar = element(by.xpath('/html/body/app-root/app-listar-carro/div/table/caption'));
-   
     private inputCodigoCarro = element(by.id('codigoCarro'));
     private inputPlacaCarro = element(by.id('placaCarro'));
     private inputModeloCarro = element(by.id('modeloCarro'));
@@ -13,11 +12,10 @@ export class EditarPage {
     private inputPrecioCarro = element(by.id('PrecioCarro'));
     private estadoCarro = element(by.id('estadoCarro'));
     private btnEditarCarro = element(by.id('guardarCarro'));
-    
+
     async ingresarId(idCarro) {
         await this.inputCodigoCarro.sendKeys(idCarro);
     }
-   
     async ingresarPlaca(placaCarro) {
         await this.inputPlacaCarro.sendKeys(placaCarro);
     }
