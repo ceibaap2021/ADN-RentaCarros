@@ -42,7 +42,7 @@ describe('CarroService', () => {
     req.flush(carros);
   });
 
-  fit('consultarIdCarro', () => {
+  it('consultarIdCarro', () => {
     const idCarro = 221;
 
     const result = service.consultarIdCarro(idCarro);
