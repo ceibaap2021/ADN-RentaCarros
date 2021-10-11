@@ -52,7 +52,7 @@ describe('ListarCarroComponent', () => {
   });
 
 
-  fit('Eliminar carro', async () => {
+  it('Eliminar carro', async () => {
     const spyRedirect = spyOn(carroService, 'eliminar').and.callThrough();
 
     component.eliminar(dataCarros);
