@@ -44,7 +44,7 @@ describe('ListarCarroComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Valida tamano de la tablas', () => {
+  fit('Valida tamano de la tablas', () => {
     expect(component).toBeTruthy();
     component.dataSource.subscribe(resultado => {
       expect(2).toBe(resultado.length);
