@@ -3,7 +3,6 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
 import { environment } from '@env/environment';
-import { of } from 'rxjs';
 import { Carro } from '../model/carro';
 
 import { CarroService } from './carro.service';
@@ -61,7 +60,7 @@ describe('CarroService', () => {
 
     const carros = new Carro('1121', '1121', '1121', '1121', '1121', true);
 
-    const result = spyOn(service, 'guardar').withArgs(carros).and.returnValue(of(true).toPromise());
+    const result = service.editar(carros);
 
     expect(result).toEqual(result);
   });
