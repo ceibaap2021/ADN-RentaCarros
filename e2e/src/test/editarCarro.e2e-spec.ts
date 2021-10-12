@@ -13,27 +13,25 @@ describe('workspace-project Carro', () => {
         editar = new EditarPage();
     });
 
-    it('Deberia editar un Carro', () => {
+    fit('Deberia editar un Carro', () => {
         page.navigateTo();
         navBar.clickBotonListarCarros();
         editar.clickBotonEditarCarro();
-        const ID_CARRO = '005021';
         const PLACA_CARRO = 'WSD-856';
         const VALOR_CARRO = '8901';
         const MODELO_CARRO = '2018';
         const GAMA_CARRO = 'ALTA';
         const ESTADO_CARRO = true;
 
-        editar.ingresarId(ID_CARRO);
         editar.ingresarPlaca(PLACA_CARRO);
         editar.ingresarPrecio(VALOR_CARRO);
         editar.ingresarModelo(MODELO_CARRO);
         editar.ingresarGama(GAMA_CARRO);
         editar.ingresarEstado(ESTADO_CARRO);
         browser.sleep(3000);
-        editar.clickBotonEditarCarro();
-        browser.sleep(5000);
-        editar.mensajeExitoso();
+        editar.guardarCarro();
+        browser.sleep(2000);
+        expect(editar.mensajeExitoso()).toBe(true);
         expect(editar.textLabelListar()).toBe(true);
         browser.sleep(5000);
     });

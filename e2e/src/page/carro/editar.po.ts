@@ -2,7 +2,7 @@ import { by, element } from 'protractor';
 
 export class EditarPage {
     private linkListarCarros = element(by.id('linkListarCarro'));
-    private modalAlertSucces = element(by.xpath('/html/body/div[3]/div/div[6]/button[1]'));
+    private modalAlertSucces = element(by.xpath('//*[@id="swal2-title"]'));
     private textEditar = element(by.xpath('/html/body/app-root/app-crear-carro/div/h1'));
     private textListar = element(by.xpath('/html/body/app-root/app-listar-carro/div/table/caption'));
     private inputCodigoCarro = element(by.id('codigoCarro'));
@@ -11,7 +11,8 @@ export class EditarPage {
     private inputGamaCarro = element(by.id('gamaCarro'));
     private inputPrecioCarro = element(by.id('PrecioCarro'));
     private estadoCarro = element(by.id('estadoCarro'));
-    private btnEditarCarro = element(by.id('guardarCarro'));
+    private btnEditarCarro = element(by.id('editar'));
+    private btnguardarCarro = element(by.id('guardarCarro'));
 
     async ingresarId(idCarro) {
         await this.inputCodigoCarro.sendKeys(idCarro);
@@ -32,7 +33,7 @@ export class EditarPage {
         await this.estadoCarro.sendKeys(estadoCarro);
     }
     async mensajeExitoso() {
-        await this.modalAlertSucces.click();
+        await this.modalAlertSucces.isDisplayed();
     }
     async clickBotonEditarCarro() {
         await this.btnEditarCarro.click();
@@ -45,6 +46,9 @@ export class EditarPage {
     }
     async textLabelListar() {
         await this.textListar.isDisplayed();
+    }
+    async guardarCarro() {
+        await this.btnguardarCarro.click();
     }
 
 }
