@@ -58,12 +58,13 @@ describe('ListarCarroComponent', () => {
   it('Eliminar carro', async () => {
     const spyRedirect = spyOn(carroService, 'eliminar').and.callThrough();
     const spyAlertEliminar = spyOn(alertService, 'alertDeleteSucces');
+    const llamarConsultar = component.consultar();
 
     component.eliminar(dataCarros);
-    component.consultar();
     alertService.alertDeleteSucces();
 
     expect(spyRedirect).toHaveBeenCalled();
+    expect(llamarConsultar).toHaveBeenCalled();
     expect(spyAlertEliminar).toHaveBeenCalledTimes(1);
   });
 
