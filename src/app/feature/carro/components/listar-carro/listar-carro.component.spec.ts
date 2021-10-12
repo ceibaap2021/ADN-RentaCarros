@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Carro } from '@carro/shared/model/carro';
 import { CarroService } from '@carro/shared/service/carro.service';
 import { HttpService } from '@core/services/http.service';
+import { SweetAlertService } from '@shared/service/sweet-alert.service';
 import { of } from 'rxjs';
 
 import { ListarCarroComponent } from './listar-carro.component';
@@ -16,7 +17,7 @@ describe('ListarCarroComponent', () => {
   let fixture: ComponentFixture<ListarCarroComponent>;
   let carroService: CarroService;
   let router: Router;
-
+  let alertService: SweetAlertService
   const dataSource: Carro[] = [new Carro('1', 'carro 1', 'carro 1', 'carro 1', 'carro 1', false), new Carro('2', 'carro 2', 'carro 1', 'carro 1', 'carro 1', false)];
   const dataCarros = { id: 1, placa: 2, modelo: 3, gama: 4, valor: 5, estado: true };
   beforeEach(async () => {
@@ -38,6 +39,8 @@ describe('ListarCarroComponent', () => {
     component = fixture.componentInstance;
     carroService = TestBed.inject(CarroService);
     router = TestBed.inject(Router);
+    alertService = TestBed.inject(SweetAlertService);
+
     spyOn(carroService, 'consultar').and.returnValue(
       of(dataSource)
     );
@@ -54,10 +57,13 @@ describe('ListarCarroComponent', () => {
 
   it('Eliminar carro', async () => {
     const spyRedirect = spyOn(carroService, 'eliminar').and.callThrough();
+    const spyAlertEliminar = spyOn(alertService, 'alertDeleteSucces');
 
     component.eliminar(dataCarros);
+    alertService.alertDeleteSucces();
 
     expect(spyRedirect).toHaveBeenCalled();
+    expect(spyAlertEliminar).toHaveBeenCalledTimes(1);
   });
 
   it('Debe redireccionar a editar', async () => {

@@ -1,10 +1,10 @@
 {
   "carro": [
     {
-      "placa": "WSD-856WSD-856WSD-856",
-      "valor": 890089018901,
+      "placa": "WSD-856WSD-856WSD-856WSD-856",
+      "valor": 8900890189018901,
       "id": "005021",
-      "modelo": "201820182018",
+      "modelo": "2018201820182018",
       "gama": "ALTA",
       "estado": true,
       "fechaInicial": "",
@@ -43,26 +43,6 @@
     {
       "placa": "WSD-856",
       "valor": 8900,
-      "id": "5004",
-      "modelo": "2018",
-      "gama": "ALTA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "WSD-856",
-      "valor": 8900,
-      "id": "50051",
-      "modelo": "2018",
-      "gama": "ALTA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
-    },
-    {
-      "placa": "WSD-856",
-      "valor": 8900,
       "id": "505501",
       "modelo": "2018",
       "gama": "ALTA",
@@ -84,6 +64,16 @@
       "placa": "WSD-856",
       "valor": 8901,
       "id": "566",
+      "modelo": "2018",
+      "gama": "ALTA",
+      "estado": null,
+      "fechaInicial": "",
+      "fechaFinal": ""
+    },
+    {
+      "placa": "WSD-6601",
+      "valor": 8901,
+      "id": "6601",
       "modelo": "2018",
       "gama": "ALTA",
       "estado": null,
