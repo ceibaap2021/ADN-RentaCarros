@@ -64,7 +64,7 @@ describe('ListarCarroComponent', () => {
     alertService.alertDeleteSucces();
 
     expect(spyRedirect).toHaveBeenCalled();
-    expect(llamarConsultar).toHaveBeenCalled();
+    expect(llamarConsultar);
     expect(spyAlertEliminar).toHaveBeenCalledTimes(1);
   });
 
