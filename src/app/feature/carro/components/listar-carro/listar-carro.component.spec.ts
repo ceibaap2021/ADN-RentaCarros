@@ -60,6 +60,7 @@ describe('ListarCarroComponent', () => {
     const spyAlertEliminar = spyOn(alertService, 'alertDeleteSucces');
 
     component.eliminar(dataCarros);
+    component.consultar();
     alertService.alertDeleteSucces();
 
     expect(spyRedirect).toHaveBeenCalled();
