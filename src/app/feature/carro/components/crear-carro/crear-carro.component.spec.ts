@@ -80,4 +80,9 @@ describe('CrearCarroComponent', () => {
     const control = 'destino';
     expect(component.messegeError(control)).toEqual('El campo destino, es requerido.');
   });
+
+  fit('validar variable isEdit', () => {
+    let data: boolean = component.isEdit;
+    expect(data).toBeFalsy();
+  })
 });
