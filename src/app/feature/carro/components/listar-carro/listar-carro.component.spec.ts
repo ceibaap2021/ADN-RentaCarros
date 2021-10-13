@@ -58,7 +58,7 @@ describe('ListarCarroComponent', () => {
   it('Eliminar carro', async () => {
     const spyRedirect = spyOn(carroService, 'eliminar').and.callThrough();
     const spyAlertEliminar = spyOn(alertService, 'alertDeleteSucces');
-    const llamarConsultar = component.consultar();
+    const llamarConsultar = spyOn(carroService, 'consultar').and.returnValue(of(dataSource));
 
     component.eliminar(dataCarros);
     alertService.alertDeleteSucces();
