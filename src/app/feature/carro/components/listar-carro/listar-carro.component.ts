@@ -44,8 +44,6 @@ export class ListarCarroComponent implements OnInit {
   }
 
   public openDialog(data): void {
-    console.log(data);
-    
     const dialogRef = this.dialog.open(DialogRentarComponent, {
       width: '700px',
       data
