@@ -84,5 +84,14 @@ describe('CrearCarroComponent', () => {
   it('validar variable isEdit', () => {
     let data: boolean = component.isEdit;
     expect(data).toBeFalsy();
-  })
+  });
+
+  it('Debe llenar el metodo change', async () => {
+    const data = { estado: true, fechaFinal: "", fechaInicial: "", gama: "ALTA", id: "005021", modelo: "s", placa: "s", valor: 25, };
+    const spyRedirecionar = spyOn(component, 'change').withArgs(data).and.callThrough();
+
+    component.change(data);
+
+    expect(spyRedirecionar).toHaveBeenCalled();
+  });
 });

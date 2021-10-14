@@ -1,14 +1,14 @@
 {
   "carro": [
     {
-      "placa": "WSD-856WSD-856WSD-856WSD-856WSD-856",
-      "valor": 89008901890189020000,
+      "placa": "s",
+      "valor": 2500,
       "id": "005021",
-      "modelo": "20182018201820182018",
+      "modelo": "s",
       "gama": "ALTA",
-      "estado": true,
-      "fechaInicial": "",
-      "fechaFinal": ""
+      "estado": false,
+      "fechaInicial": "2021-10-14T05:00:00.000Z",
+      "fechaFinal": "2021-10-21T05:00:00.000Z"
     },
     {
       "placa": "WSD-856",

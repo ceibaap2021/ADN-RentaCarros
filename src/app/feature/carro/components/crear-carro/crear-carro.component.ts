@@ -78,6 +78,8 @@ export class CrearCarroComponent implements OnInit {
     });
   }
   public change(result) {
+    console.log(result);
+    
     this.value = result;
     if (result.fechaInicial === '' && result.fechaFinal === '') {
       return true;

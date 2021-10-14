@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Carro } from '@carro/shared/model/carro';
@@ -27,9 +28,11 @@ describe('ListarCarroComponent', () => {
         CommonModule,
         HttpClientTestingModule,
         RouterTestingModule,
-        MatDialogModule
+        MatDialogModule,
+        BrowserAnimationsModule,
+        
       ],
-      providers: [CarroService, HttpService, MatDialog]
+      providers: [CarroService, HttpService, MatDialog,CurrencyPipe]
     })
       .compileComponents();
   });
@@ -78,4 +81,15 @@ describe('ListarCarroComponent', () => {
     expect(spyRedirecionar).toHaveBeenCalled();
     expect(spyRouter).toHaveBeenCalledTimes(1);
   });
+
+  // fit('llamando al metodo de open dialog', async () => {
+  //   const data = { estado: true, fechaFinal: "", fechaInicial: "", gama: "ALTA", id: "005021", modelo: "s", placa: "s", valor: 25, };
+  //   const spyDialog = spyOn(component, 'openDialog').withArgs(data).and.callThrough();
+
+  //   component.openDialog(data);
+
+  //   expect(spyDialog).toHaveBeenCalled();
+  //   expect(CurrencyPipe).toHaveBeenCalled();
+
+  // });
 });
