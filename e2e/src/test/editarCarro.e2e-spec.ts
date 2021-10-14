@@ -13,7 +13,7 @@ describe('workspace-project Carro', () => {
         editar = new EditarPage();
     });
 
-    fit('Deberia editar un Carro', () => {
+    it('Deberia editar un Carro', () => {
         page.navigateTo();
         navBar.clickBotonListarCarros();
         editar.clickBotonEditarCarro();

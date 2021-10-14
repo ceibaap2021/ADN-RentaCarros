@@ -2,19 +2,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDialog, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {   MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { CarroService } from '@carro/shared/service/carro.service';
-import { HttpService } from '@core/services/http.service';
-
 import { DialogRentarComponent } from './dialog-rentar.component';
 
 describe('DialogRentarComponent', () => {
+  let component: DialogRentarComponent;
   let fixture: ComponentFixture<DialogRentarComponent>;
 
   beforeEach(async () => {
@@ -24,31 +18,29 @@ describe('DialogRentarComponent', () => {
         HttpClientTestingModule,
         CommonModule,
         RouterTestingModule,
-        ReactiveFormsModule,
         FormsModule,
-        MatSelectModule,
-        MatSlideToggleModule,
-        MatFormFieldModule,
+        // MatFormFieldModule,
+        // MatInputModule,
+        // MatDialogModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        MatInputModule,
-        MatDialogModule
       ],
-      providers: [CarroService, HttpService, MatDialog, MAT_DIALOG_DATA]
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DialogRentarComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
 
   });
 
-  // fit('should have as numeroDias', () => {
-  //   const fixture = TestBed.createComponent(DialogRentarComponent);
-  //   const app = fixture.debugElement.componentInstance;
+  it('should have as numeroDias', () => {
+    expect(component).toBeTruthy();
+  })
 
-  //   expect(app.numeroDias).toEqual(0);
-  // })
 });
